@@ -1,0 +1,21 @@
+﻿@model CandyListViewModel
+
+    <h1>@Model.CurrentCategory</h1>
+    @foreach (Candy candy in Model.Candies)
+    {
+        @*<div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="img-thumbnail">
+                <img src="@candy.Thumbnail" alt="image for candy"/>
+
+                <div class="figure-caption">
+                    <h2>@candy.Name</h2>
+                    <h3>@candy.Price.ToString("c")</h3>
+                    <h4>@candy.Category.CategoryName</h4>
+                    <h3><a asp-controller="Candy" asp-action="Details" asp-route-id="@candy.CandyID">@candy.Name </a></h3>
+                </div>
+
+            </div>
+        </div>*@
+
+        <partial name ="Components/_candyCard" model="candy"/>
+    }
