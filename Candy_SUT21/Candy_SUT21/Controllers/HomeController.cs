@@ -1,32 +1,31 @@
 ﻿using Candy_SUT21.Models;
+using Candy_SUT21.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Candy_SUT21.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ICandyRepository _candyRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ICandyRepository candyRepository)
         {
-            _logger = logger;
+            _candyRepository = candyRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var HomeViewModeld = new HomeViewModel
+            {
+                CandiesOnSale = _candyRepository.GetCandyOnSale
+            };
+            return View(HomeViewModeld);
         }
     }
 }

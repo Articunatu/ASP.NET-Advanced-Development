@@ -1,10 +1,15 @@
-﻿namespace Candy_SUT21.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Candy_SUT21.Models
 {
     public interface ICandyRepository
     {
-        IEnumerable<Candy> GetAllCandies { get; }
-        IEnumerable<Candy> GetCandiesOnSale { get; }
+        IEnumerable<Candy> GetAllCandy { get; }
+        IEnumerable<Candy> GetCandyOnSale { get; }
 
-        Candy GetCandyByID(int candyID);
+        Candy GetCandyById(int candyId);
     }
 }
