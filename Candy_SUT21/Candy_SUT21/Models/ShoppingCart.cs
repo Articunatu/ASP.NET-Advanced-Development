@@ -11,7 +11,6 @@ namespace Candy_SUT21.Models
     {
         private readonly AppDbContext _appDbContext;
 
-
         public string ShoppingCartID { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 

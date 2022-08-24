@@ -7,7 +7,7 @@
         <tr>
             <th>Selected Amouont</th>
             <th>Candy</th>
-            <th class="text-right">Price</th>
+            <th class="text-left">Price</th>
             <th class="text-right">Subtotal</th>
         </tr>
     </thead>
@@ -28,4 +28,14 @@
            </tr>
        }
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="text-right">Total</td>
+            <td class="text-right">@Model.ShoppingCartTotal.ToString("c")</td>
+        </tr>
+    </tfoot>
 </table>
+
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="ClearCart">Clear Cart</a>
+</div>
