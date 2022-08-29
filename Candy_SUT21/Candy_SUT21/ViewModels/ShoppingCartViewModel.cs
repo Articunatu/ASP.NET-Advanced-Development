@@ -1,4 +1,6 @@
-﻿namespace Candy_SUT21.Models
+﻿using Candy_SUT21.Models;
+
+namespace Candy_SUT21.ViewModels
 {
     public class ShoppingCartViewModel
     {
